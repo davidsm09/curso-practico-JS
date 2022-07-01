@@ -138,6 +138,20 @@ header h1 {
     font-size: 17px;
 }
 
+footer {
+    text-align: center;
+    padding: 3em;
+}
+footer p {
+    color: #fff;
+}
+footer p a {
+    text-decoration: none;
+    color: #11ffc7;
+}
+footer p a:hover{
+    text-decoration: underline 3px;
+}
 
 
 @media (max-width: 800px) {
