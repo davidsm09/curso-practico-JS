@@ -110,3 +110,32 @@ function calcularAreaCirculo() {
     const respuestaC = document.getElementById("respuestaC");
     respuestaC.textContent = `El area es de ${areaC} cm2`
 }
+
+//Triangulo Isósceles
+function trianguloIso(){
+    let isolado1 = document.getElementById("isolado1");
+    let iLado1 = parseFloat(isolado1.value);
+
+    let isolado2 = document.getElementById("isolado2");
+    let iLado2 = parseFloat(isolado2.value);
+
+    let isobase = document.getElementById("isobase");
+    let iBase = parseFloat(isobase.value);
+
+    if(iLado1 != iLado2){
+        const respuestaTiso = document.getElementById("respuestaTiso");
+        respuestaTiso.textContent = ("No se puede calcular debido a que los lados son diferentes");
+    }else{
+        const pequenoLado2 = iBase /2; 
+        const pequenoBase = iLado1;
+
+        const pequenoLado2Cuadrado = pequenoLado2 * pequenoLado2;
+        const pequenoBaseCuadrado = pequenoBase * pequenoBase;
+         
+        let pequenoLado1 = Math.sqrt(pequenoBaseCuadrado - pequenoLado2Cuadrado);
+
+        const grandeAltura = pequenoLado1;
+        const respuestaTiso = document.getElementById("respuestaTiso");
+        respuestaTiso.textContent = (`La altura del triangulo es: ${grandeAltura}cm`);
+    }
+}

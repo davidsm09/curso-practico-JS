@@ -205,6 +205,12 @@ footer p a:hover{
         flex-direction: column;
         align-items: center;
     }
+    .isoscelesbtn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     
     .card-container form button {
         margin-bottom: 20px;
