@@ -4,12 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Taller2/descuento.css">
     <title>Descuentos y porcentajes</title>
 </head>
 <body>
+
     <header>
-        
+        <h1>Precios Descuentos y Porcentajes</h1>
     </header>
-    <script src="/descuento.js"></script>
+
+    <main>
+        <section class="main-title">
+            <h2>
+                Aqui podras calcular porcentajes y descuentos de cualquier precio. 💸
+            </h2>
+        </section>
+
+        <section class="card-container">
+            <form class="form-container">
+
+                <label for="precio">
+                    Precio del producto
+                </label>
+                <input oninput="clickPrecioFinal()" type="number" placeholder="$" id="precio" class="precio">
+
+                <label for="descuento">
+                    Descuento del producto
+                </label>
+                <input oninput="clickPrecioFinal()" type="number" placeholder="%" id="descuento" class="descuento">
+
+                
+
+                <p id="mostrarPrecio"></p>
+
+            </form>
+        </section>
+
+    </main>
+    <footer>
+        <p>
+            <p>Desarrollado por David Meza | Web Developer | Visita mi <a href="https://davidsm09.github.io/index.html" target="_blank">Portfolio Web</a></p>
+        </p>
+    </footer>
+
+
+
+
+    <!--oninput="clickPrecioFinal()" <button type="button" onclick="clickPrecioFinal()">
+                    Calcular precio con descuento
+                </button>-->
+
+
+
+
+
+
+    <script src="/Taller2/descuento.js"></script>
 </body>
 </html>

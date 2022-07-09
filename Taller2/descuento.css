@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(/Taller2/assets/pexels-artem-beliaikin-2519790.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.45);
+    height: 80px;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.card-container {
+width: 600px;
+height: 370px;
+background: rgba(255, 255, 255, 0.20);
+border-radius: 20px;
+margin-bottom: 30px;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+    align-items: center;
+}
+
+.form-container label{
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #fff;
+}
+.precio {
+    margin-bottom: 40px;
+    background: rgba(0, 0, 0, 0.45);
+    border-bottom: solid 2px #e37171;
+    width: 150px;
+    height: 30px;
+    font-size: 25px;
+    text-align: start;
+    color: #fff;
+}
+
+.descuento {
+    margin-bottom: 40px;
+    background: rgba(0, 0, 0, 0.45);
+    border-bottom: solid 2px #e37171;
+    width: 150px;
+    height: 30px;
+    font-size: 25px;
+    color: #fff;
+}
+.form-container p {
+    color: #fff;
+    font-size: 25px;
+    border-bottom:solid 2px #e37171 ;
+    padding-bottom: 5px;
+}
+
+footer {
+    text-align: center;
+    height: 70px;
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.70);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-weight: 400;   
+    padding: 0 5px;
+}
+footer p a {
+    color: #9a1f00;
+    text-decoration: none;
+}
+footer p a:hover {
+    color: #9a1f00;
+    text-decoration: underline 2px;
+}
+
+@media (max-width: 800px) {
+    header h1{
+        font-size: 27px;
+    }
+
+    .main-title {
+      font-size: 18;
+    }
+    main {
+        padding: 0 5px;
+    }
+    .card-container {
+        width: 100%;
+        }
+}
+
