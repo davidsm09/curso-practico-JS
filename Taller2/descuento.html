@@ -32,11 +32,24 @@
                     Descuento del producto
                 </label>
                 <input oninput="clickPrecioFinal()" type="number" placeholder="%" id="descuento" class="descuento">
+                <h3> Precio con descuento se muestra automaticamente.</h3>
+                <div class="Pf-container">
+                    <p id="mostrarPrecio"></p>
+                </div>
 
-                
 
-                <p id="mostrarPrecio"></p>
+                <label class="label__text" for="InputCoupon">Tienes algún CUPON? </label>
+                <div class="form__container-input">
+                    <input id="InputCoupon" type="text" placeholder="Cupon" class="precio">
+                </div>
 
+                <button class="form__button" type="button" onclick="onclickButtonPriceCupon()">
+                    Calcular descuento con cupon
+                </button>
+                <h3> Precio con cupon.</h3>
+                <div class="Pf-container">
+                    <p id="ResultPC"></p>
+                </div>
             </form>
         </section>
 
