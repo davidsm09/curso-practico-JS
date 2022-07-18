@@ -20,36 +20,78 @@ function calcularMediaAritmetica(lista) {
 
 //MEDIANA
 
-const lista1 = [
-    100,
-    200,
-    500,
-    800,
-    40000000,
-];
 
-const mitadLista1 = parseInt(lista1.length / 2);
 
-function esPar(numerito) {
-    if (numerito % 2 === 0) {
+
+function esPar(numeros) {
+    if (numeros % 2 === 0) {
         return true;
     } else {
         return false;
     }
 }
 
-let mediana;
+function calcularMediana(listaNumeros){
 
-if (esPar(lista1.length)) {
-    const elemento1 = lista1[mitadLista1 - 1];
-    const elemento2 = lista1[mitadLista1];
+    var listaOrdenada = listaNumeros.sort(function(a,b) {
+        return a - b;
+    });
 
-    const promedioElemento1y2 = calcularMediaAritmetica([
+    const mitadLista1 = parseInt(listaOrdenada.length / 2);
+
+    let mediana;
+
+    if (esPar(listaOrdenada.length)) {
+        const elemento1 = listaOrdenada[mitadLista1 - 1];
+        const elemento2 = listaOrdenada[mitadLista1];
+
+        const promedioElemento1y2 = calcularMediaAritmetica([
         elemento1,
         elemento2,
-    ]);
+        ]);
 
     mediana = promedioElemento1y2;
-} else {
-    mediana = lista1[mitadLista1];
+    } else {
+    mediana = listaOrdenada[mitadLista1];
+    }
+    return mediana;
 }
+
+
+// MODA
+
+const lista1 = [
+    1,
+    2,
+    3,
+    1,
+    2,
+    3,
+    4,
+    2,
+    2,
+    2,
+    1,
+  ];
+  
+  const lista1Count = {};
+  
+  lista1.map(
+    function (elemento) {
+      if (lista1Count[elemento]) {
+        lista1Count[elemento] += 1;
+      } else {
+        lista1Count[elemento] = 1;
+      }
+    }
+  );
+  
+  const lista1Array = Object.entries(lista1Count).sort(
+    function (elementoA, elementoB) {
+      return elementoA[1] - elementoB[1];
+    }
+  );
+  
+  const moda = lista1Array[lista1Array.length - 1];
+
+  //Tarea pasar a funcion para que calcule cualquier lista
