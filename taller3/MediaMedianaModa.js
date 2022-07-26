@@ -1,19 +1,15 @@
-//MEDIA
 
-function calcularMediaAritmetica() {
-     const lista = document.getElementById("input-lista");
-     const listavalue = lista.value;
 
-    const sumaLista = listavalue.reduce(
+function calcularMediaAritmetica(lista) {
+  
+    const sumaLista = lista.reduce(
         function (valorAcumulado = 0, nuevoElemento) {
             return valorAcumulado + nuevoElemento;
         }
     );
 
-    const promedioLista = sumaLista / listavalue.length;
-   
-    const resultado = document.getElementById("resultado");
-    resultado.innerText = "el promedio es " + promedioLista;
+    const promedioLista = sumaLista / lista.length;
+    return promedioLista;
 }
 
 
@@ -22,21 +18,27 @@ function calcularMediaAritmetica() {
 
 
 
-function esPar(numeros) {
-    if (numeros % 2 === 0) {
-        return true;
-    } else {
-        return false;
-    }
-}
 
-function calcularMediana(listaNumeros){
 
-    var listaOrdenada = listaNumeros.sort(function(a,b) {
+function calcularMediana(){
+    const listaNumeros = document.getElementById("input-lista").value;
+  
+    let arrayNumbers = Array.from(listaNumeros.split(","), Number);
+
+    var listaOrdenada = arrayNumbers.sort(function(a,b) {
         return a - b;
     });
 
+
     const mitadLista1 = parseInt(listaOrdenada.length / 2);
+
+    function esPar(numeros) {
+        if (numeros % 2 === 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     let mediana;
 
@@ -53,30 +55,39 @@ function calcularMediana(listaNumeros){
     } else {
     mediana = listaOrdenada[mitadLista1];
     }
-    return mediana;
+
+    const resultadoM = document.getElementById("resultado");
+    resultadoM.innerText = "la mediana es " + mediana;
+
 }
 
 
 // MODA
 
   
-  function calcularModa(lista){
-    const listaCount = {};
-    lista.map(
-        function (elemento){
-            if (listaCount[elemento]){
-                listaCount[elemento]+=1
-            }
-            else{
-                listaCount[elemento]=1;
-            }       
-        }
-    );
-    const listaArray = Object.entries(listaCount).sort( 
-        function (valorAcumulado, nuevoValor){
-            return valorAcumulado[1] - nuevoValor[1]; 
-        }
-    );
+function calcularModa() {
+    entradaModa = document.getElementById("input-lista");
+    modaValue = entradaModa.value;
+  
+    let arrayValor = Array.from(modaValue.split(","), Number);
+  
+    const listaContador = {};
+  
+    arrayValor.map(function (elemento) {
+      if (listaContador[elemento]) {
+        // listaContador[elemento] = listaContador[elemento] + 1;
+        listaContador[elemento] += 1;
+      } else {
+        listaContador[elemento] = 1;
+      }
+    });
+  
+    const listaArray = Object.entries(listaContador).sort(function (elementoA, elementoB) {
+      return elementoA[1] - elementoB[1];
+    });
+  
     const moda = listaArray[listaArray.length - 1];
-    return "La moda es: " +moda[0] + " que se repité " + moda[1] + " veces";
-} 
+    
+    const mostrarResultado = document.getElementById("resultado");
+    mostrarResultado.innerText = "La moda es de: " + moda;
+  }
